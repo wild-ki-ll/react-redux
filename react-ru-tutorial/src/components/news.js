@@ -1,4 +1,5 @@
 import React from 'react'
+import './news.css'
 
 export const my_news = [
   {
@@ -15,18 +16,20 @@ export const my_news = [
   }
 ];
 
+export const empty_news = [];
+
 const News = (newsList) => {
     let tmp = newsList.data.map(
         ({author, text}, index) => 
             <div key={index}>
-                <p className="news_author">{author}:</p>
-                <p className="news_text">  {text}</p>
+                <p className="news_author">{author}: {text}</p>
             </div> 
     )
 
     return (
         <div className="news_list"> 
             {tmp}
+            <strong className={newsList.data.length > 0 ? '':'none'}>Всего новостей: {newsList.data.length}</strong>
         </div>
     )  
 }

@@ -1,5 +1,5 @@
 import React            from 'react'
-import News, {my_news}  from './news'
+import News, {my_news, empty_news}  from './news'
 import Comments         from './comment'
 
 let App = () => (
